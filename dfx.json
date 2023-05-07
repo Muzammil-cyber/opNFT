@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "opnft_backend": {
+      "main": "src/opnft_backend/main.mo",
+      "type": "motoko"
+    },
+    "opnft_frontend": {
+      "dependencies": [
+        "opnft_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/opnft_frontend/src/index.html"
+      },
+      "source": [
+        "src/opnft_frontend/assets",
+        "dist/opnft_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
