@@ -4,6 +4,10 @@
       "main": "src/opnft_backend/main.mo",
       "type": "motoko"
     },
+    "nft": {
+      "main": "src/NFT/nft.mo",
+      "type": "motoko"
+    },
     "opnft_frontend": {
       "dependencies": [
         "opnft_backend"

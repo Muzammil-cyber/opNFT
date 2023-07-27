@@ -1,19 +1,14 @@
-import { opnft_backend } from "../../declarations/opnft_backend";
+import React from "react";
+import { createRoot } from 'react-dom/client';
+import App from "./components/App";
+import { Principal } from "@dfinity/principal";
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const button = e.target.querySelector("button");
+const CURRENT_USER_ID = Principal.fromText("2vxsx-fae");
+export default CURRENT_USER_ID;
 
-  const name = document.getElementById("name").value.toString();
+const init = async () => {
+  const root = createRoot(document.getElementById('root'));
+  root.render(<App />);
+};
 
-  button.setAttribute("disabled", true);
-
-  // Interact with foo actor, calling the greet method
-  const greeting = await opnft_backend.greet(name);
-
-  button.removeAttribute("disabled");
-
-  document.getElementById("greeting").innerText = greeting;
-
-  return false;
-});
+init();
